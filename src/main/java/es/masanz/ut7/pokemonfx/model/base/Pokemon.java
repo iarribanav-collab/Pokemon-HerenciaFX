@@ -193,6 +193,7 @@ public abstract class Pokemon implements Cloneable{
     }
 
     // TODO 01 REV: Implementar clone. El clonado deberá generar un pokemon con nuevos IV.
+
     @Override
     public Pokemon clone() {
         try {

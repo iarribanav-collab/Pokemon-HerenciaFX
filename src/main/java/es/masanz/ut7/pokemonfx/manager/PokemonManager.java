@@ -12,7 +12,9 @@ public class PokemonManager {
         Pokemon pokemon = null;
         if(MapManager.mapas.containsKey(ruta)){
             List<Pokemon> pokemonSalvajes = MapManager.mapas.get(ruta).getPokemonSalvajes();
-            pokemon = pokemonSalvajes.get((int) (Math.random() * pokemonSalvajes.size()));
+            Pokemon original = pokemonSalvajes.get((int) (Math.random() * pokemonSalvajes.size()));
+
+            pokemon = original.clone();
         }
         if(pokemon==null){
             pokemon = new Bulbasaur(5);

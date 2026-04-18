@@ -34,4 +34,6 @@ public class Blastoise extends Pokemon implements Agua {
     public Pokemon pokemonAEvolucionar() {
         return null;
     }
+
+
 }
