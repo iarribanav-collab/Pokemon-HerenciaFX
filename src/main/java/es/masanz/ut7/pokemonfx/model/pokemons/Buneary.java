@@ -39,6 +39,7 @@ public class Buneary extends Pokemon implements Normal {
 
     @Override
     public Pokemon clone() {
-        return super.clone();
+        Pokemon pokemon = new Buneary(this.nivel);
+        return pokemon;
     }
 }

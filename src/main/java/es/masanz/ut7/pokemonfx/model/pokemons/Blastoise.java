@@ -35,5 +35,11 @@ public class Blastoise extends Pokemon implements Agua {
         return null;
     }
 
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Blastoise(this.nivel);
+        return pokemon;
+    }
+
 
 }

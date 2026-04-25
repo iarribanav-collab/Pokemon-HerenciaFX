@@ -29,4 +29,10 @@ public class Lopunny extends Pokemon implements Normal {
 
     @Override
     public Pokemon pokemonAEvolucionar() {return null;}
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Lopunny(this.nivel);
+        return pokemon;
+    }
 }

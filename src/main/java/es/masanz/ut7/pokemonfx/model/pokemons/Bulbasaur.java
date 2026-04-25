@@ -25,6 +25,12 @@ public class Bulbasaur extends Pokemon implements Planta, Veneno {
     }
 
     @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Bulbasaur(this.nivel);
+        return pokemon;
+    }
+
+    @Override
     protected void asignarAtaques() {
         // Nivel 1: Placaje
         Ataque placaje = new Ataque("placaje", 35, 95, Tipo.NORMAL, false, 35);

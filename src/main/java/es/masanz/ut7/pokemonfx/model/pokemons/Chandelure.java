@@ -35,4 +35,10 @@ public class Chandelure extends Pokemon implements Fuego, Fantasma {
     public Pokemon pokemonAEvolucionar() {
         return null;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Chandelure(this.nivel);
+        return pokemon;
+    }
 }

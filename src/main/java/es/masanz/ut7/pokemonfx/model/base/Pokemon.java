@@ -195,21 +195,5 @@ public abstract class Pokemon implements Cloneable{
     // TODO 01 REV: Implementar clone. El clonado deberá generar un pokemon con nuevos IV.
 
     @Override
-    public Pokemon clone() {
-        try {
-            Pokemon copia = this.getClass()
-                    .getConstructor(int.class)
-                    .newInstance(this.nivel);
-
-            copia.apodo = this.apodo;
-            copia.puntosExp = this.puntosExp;
-
-            copia.ataques = new LinkedHashMap<>(this.ataques);
-
-            return copia;
-
-        } catch (Exception e) {
-            throw new RuntimeException("Error al clonar el Pokémon", e);
-        }
-    }
+    public abstract Pokemon clone();
 }

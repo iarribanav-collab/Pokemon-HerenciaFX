@@ -39,4 +39,10 @@ public class Lampent extends Pokemon implements Fuego, Fantasma {
         Pokemon pokemon = new Chandelure(this.nivel);
         return pokemon;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Lampent(this.nivel);
+        return pokemon;
+    }
 }

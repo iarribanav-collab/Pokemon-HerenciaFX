@@ -23,6 +23,12 @@ public class Charmander extends Pokemon implements Fuego {
     }
 
     @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Charmander(this.nivel);
+        return pokemon;
+    }
+
+    @Override
     protected void asignarAtaques() {
 
         Ataque aranazo = new Ataque("arañazo", 40, 100, Tipo.NORMAL, false, 35);

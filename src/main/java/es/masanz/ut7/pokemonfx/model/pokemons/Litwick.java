@@ -36,4 +36,10 @@ public class Litwick extends Pokemon implements Fantasma, Fuego {
         Pokemon pokemon = new Lampent(this.nivel);
         return pokemon;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Litwick(this.nivel);
+        return pokemon;
+    }
 }

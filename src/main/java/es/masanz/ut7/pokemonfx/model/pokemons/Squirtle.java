@@ -22,6 +22,12 @@ public class Squirtle extends Pokemon implements Agua {
     }
 
     @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Squirtle(this.nivel);
+        return pokemon;
+    }
+
+    @Override
     protected void asignarAtaques() {
         // Nivel 1: Placaje
         Ataque placaje = new Ataque("placaje", 35, 95, Tipo.NORMAL, false, 35);

@@ -35,4 +35,10 @@ public class Charizard extends Pokemon implements Fuego, Volador {
     public Pokemon pokemonAEvolucionar() {
         return null;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Charizard(this.nivel);
+        return pokemon;
+    }
 }

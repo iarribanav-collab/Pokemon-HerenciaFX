@@ -35,4 +35,10 @@ public class Wartortle extends Pokemon implements Agua {
         Pokemon pokemon = new Blastoise(this.nivel);
         return pokemon;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Wartortle(this.nivel);
+        return pokemon;
+    }
 }

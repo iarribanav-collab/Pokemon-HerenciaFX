@@ -35,4 +35,10 @@ public class Charmeleon extends Pokemon implements Fuego {
         Pokemon pokemon = new Charizard(this.nivel);
         return pokemon;
     }
+
+    @Override
+    public Pokemon clone() {
+        Pokemon pokemon = new Charmeleon(this.nivel);
+        return pokemon;
+    }
 }
