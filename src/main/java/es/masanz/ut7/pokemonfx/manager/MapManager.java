@@ -22,8 +22,10 @@ public class MapManager {
     public static int mapWidth = 20;
     public static HashMap<String, Mapa> mapas;
     public static String rutaSeleccionada;
-    public static int inicioX = mapWidth / 2 * TILE_SIZE;
-    public static int inicioY = mapHeight / 2 * TILE_SIZE;
+//    public static int inicioX = mapWidth / 2 * TILE_SIZE;
+    public static int inicioX = 6 / 2 * TILE_SIZE;
+//    public static int inicioY = mapHeight / 2 * TILE_SIZE;
+    public static int inicioY = 6 / 2 * TILE_SIZE;
 
     // TODO 04: Incluir todas las rutas que se hayan generado previamente
     public static void initMapas(){
@@ -32,6 +34,10 @@ public class MapManager {
         mapas = new HashMap<>();
         mapas.put(ruta1.getNombre(), ruta1);
         mapas.put(ruta2.getNombre(), ruta2);
+
+//        rutaSeleccionada = ruta1.getNombre();
+        cargarRuta("Ruta 1");
+
     }
 
     // Settea las variables necesarias en funcion de la ruta seleccionada

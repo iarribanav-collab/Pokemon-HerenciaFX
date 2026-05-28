@@ -31,5 +31,6 @@ public class GameApp extends Application {
         jugador.getPokemonesCapturados().add(new Squirtle(25));
         jugador.getPokemonesCapturados().add(new Charmander(35));
         launch(args);
+
     }
 }

@@ -20,7 +20,7 @@ public class Ruta1 extends Mapa {
         pokemonSalvajes.add(new Squirtle(6));
         pokemonSalvajes.add(new Charmander(7));
         pokemonSalvajes.add(new Buneary(8));
-        pokemonSalvajes.add(new Lopunny(15));
+//        pokemonSalvajes.add(new Lopunny(15));
     }
 
     @Override
