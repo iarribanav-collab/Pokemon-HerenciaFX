@@ -17,8 +17,8 @@ public class Ruta2 extends Mapa {
     @Override
     protected void cargarPokemonSalvajes(){
         pokemonSalvajes = new ArrayList<>();
-        pokemonSalvajes.add(new Bulbasaur(80));
-        pokemonSalvajes.add(new Squirtle(100));
+        pokemonSalvajes.add(new Bulbasaur(8));
+        pokemonSalvajes.add(new Squirtle(9));
         pokemonSalvajes.add(new Charmander(9));
         pokemonSalvajes.add(new Litwick(10));
         pokemonSalvajes.add(new Lampent(15));

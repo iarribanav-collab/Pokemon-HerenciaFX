@@ -36,7 +36,8 @@ public class MapManager {
         mapas.put(ruta2.getNombre(), ruta2);
 
 //        rutaSeleccionada = ruta1.getNombre();
-        cargarRuta("Ruta 1");
+//        cargarRuta("Ruta 1");
+        cargarRuta("Ruta 2");
 
     }
 
