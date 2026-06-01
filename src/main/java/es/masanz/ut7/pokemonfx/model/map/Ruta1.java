@@ -29,15 +29,26 @@ public class Ruta1 extends Mapa {
         this.nombre = "Ruta 1";
 
         int[][] mapaRuta = {
-                {1, 1, 1, 1, 1, 5, 5, 5, 1, 1, 1, 1, 1},
-                {1, 2, 2, 2, 3, 2, 2, 2, 3, 2, 2, 2, 1},
-                {1, 2, 4, 2, 2, 2, 2, 2, 2, 2, 4, 2, 1},
-                {1, 2, 2, 2, 2, 3, 3, 3, 2, 2, 2, 2, 1},
-                {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1},
-                {1, 2, 3, 3, 2, 2, 2, 2, 2, 3, 3, 2, 1},
-                {1, 2, 2, 2, 2, 4, 4, 4, 2, 2, 2, 2, 1},
-                {1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1},
-                {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+                {8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 2, 2, 8, 8, 8, 8, 8, 8, 8},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 4, 4, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 4, 4, 3, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 4, 4, 4, 3, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 4, 3, 3, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 4, 3, 3, 3, 2, 2, 9},
+                {10, 2, 3, 3, 2, 3, 2, 2, 2, 2, 3, 4, 3, 3, 4, 3, 2, 2, 9},
+                {10, 2, 3, 4, 4, 3, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 2, 2, 9},
+                {10, 2, 2, 4, 4, 3, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 2, 4, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 2, 4, 2, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2, 2, 9},
+                {10, 4, 4, 2, 2, 2, 2, 2, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2, 9},
+                {10, 4, 4, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {10, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 9},
+                {7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7},
         };
 
         this.inicioX = 6;
@@ -51,6 +62,9 @@ public class Ruta1 extends Mapa {
         this.teleportMap = new String[altura][anchura];
         this.eventsMap = new Evento[altura][anchura];
         this.npcs = new ArrayList<>();
+
+        teleportMap[0][11] = "Ruta 2";
+        teleportMap[0][10] = "Ruta 2";
 
         for (int y = 0; y < altura; y++) {
             for (int x = 0; x < anchura; x++) {
@@ -66,7 +80,6 @@ public class Ruta1 extends Mapa {
                     case 3:
                         mapData[y][x] = TileType.CESPED_HIERBA.ordinal();
                         collisionMap[y][x] = CollisionType.SUELO.ordinal();
-                        eventsMap[y][x] = new EventoEjemplo();
                         break;
                     case 4:
                         mapData[y][x] = TileType.CESPED_ARBUSTO.ordinal();
@@ -75,7 +88,43 @@ public class Ruta1 extends Mapa {
                     case 5:
                         mapData[y][x] = TileType.TELEPORT_RED.ordinal();
                         collisionMap[y][x] = CollisionType.SUELO.ordinal();
-                        teleportMap[y][x] = "Ruta 2";
+                        teleportMap[y][x] = "Ruta 1";
+                        break;
+                    case 6:
+                        mapData[y][x] = TileType.MONTE_CENTRO.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 7:
+                        mapData[y][x] = TileType.MONTE_BORDE_SUPERIOR.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 8:
+                        mapData[y][x] = TileType.MONTE_BORDE_INFERIOR.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 9:
+                        mapData[y][x] = TileType.MONTE_BORDE_IZQUIERDA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 10:
+                        mapData[y][x] = TileType.MONTE_BORDE_DERECHA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 11:
+                        mapData[y][x] = TileType.MONTE_ESQUINA_SUPERIOR_IZQUIERDA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 12:
+                        mapData[y][x] = TileType.MONTE_ESQUINA_SUPERIOR_DERECHA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 13:
+                        mapData[y][x] = TileType.MONTE_ESQUINA_INFERIOR_IZQUIERDA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
+                        break;
+                    case 14:
+                        mapData[y][x] = TileType.MONTE_ESQUINA_INFERIOR_DERECHA.ordinal();
+                        collisionMap[y][x] = CollisionType.PARED.ordinal();
                         break;
                     default:
                         mapData[y][x] = TileType.CAMINO_BLANCO.ordinal();
